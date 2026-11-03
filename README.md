@@ -8,6 +8,8 @@ Open `index.html` in a modern browser. No build, server, packages, or external r
 
 ## Explore
 
+- White theme with a university-level lesson covering the algorithm, parameters, interpretation and guided experiments.
+- Square, equal-axis surface rendering with a 600px maximum plot size to prevent distortion on wide screens.
 - Six response surfaces: Sphere, Rastrigin, Ackley, Rosenbrock, warped irregular ripples, and discontinuous terraces.
 - Contour map and projected 3D relief, particle trails, objective values on map hover, convergence chart and CSV export.
 - Adjustable swarm size, inertia, personal/social attraction, velocity limit, gradient learning rate, simulation speed and random seed.

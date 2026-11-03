@@ -28,12 +28,16 @@ Surface colours use logarithmic normalisation for visibility; the 3D view uses t
 
 ## GitHub Pages
 
-The workflow in `.github/workflows/pages.yml` deploys the four static application files on pushes to `main`. It requests automatic Pages enablement. If the repository or organisation disallows automatic setup, an administrator must choose **Settings → Pages → Source → GitHub Actions**, then rerun the workflow.
+The workflow in `.github/workflows/pages.yml` bundles the styles and scripts into one self-contained HTML file with `node build.mjs`, then deploys it on pushes to `main`. It requests automatic Pages enablement. If the repository or organisation disallows automatic setup, an administrator must choose **Settings → Pages → Source → GitHub Actions**, then rerun the workflow.
 
-Expected URL after a successful deployment: https://marchev-science.github.io/PSO-demo/
+Live URL: https://marchev-science.github.io/PSO-demo/
 
 ## Validation
 
 JavaScript syntax checks and numerical smoke checks covered all six surfaces, finite positions, domain bounds, non-increasing global-best values, and reproducible seeds. This environment did not provide the supported browser QA helper, so visual/browser verification remains outstanding.
 
 MIT licence; see LICENSE.
+
+## Deployment consistency
+
+The Pages artifact contains a single `index.html` with inline CSS and JavaScript. This prevents a new HTML document from loading stale external styles or scripts. The footer identifies the revision. Source files stay separate for editing; `node build.mjs` writes the deployable file to `_site/index.html`. Plot dimensions are explicitly set to the same pixel size in both directions, independent of intrinsic canvas sizing.

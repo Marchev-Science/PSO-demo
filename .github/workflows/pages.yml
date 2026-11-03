@@ -23,8 +23,7 @@ jobs:
           enablement: true
       - name: Package static application
         run: |
-          mkdir -p _site
-          cp index.html style.css engine.js app.js _site/
+          node build.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
